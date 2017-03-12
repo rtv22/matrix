@@ -3,6 +3,6 @@
 
 SCENARIO("matrix init", "[init]") {
 	matrix_t matrix;
-	REQUIRE(Matrix_1.xSize() == 0);
-	REQUIRE(Matrix_1.ySize() == 0);
+	REQUIRE(Matrix_1.xSize() == 3);
+	REQUIRE(Matrix_1.ySize() == 3);
 }
