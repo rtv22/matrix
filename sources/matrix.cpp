@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <fstream>
 #include <string>
+#include <classmatrix.h>
 
 using namespace std;
 
