@@ -1,3 +1,10 @@
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
 int main(){
 	setlocale(LC_ALL, "rus");
 	string filename;
