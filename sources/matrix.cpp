@@ -1,76 +1,25 @@
-#include "matrix.hpp"
-
-Matrix::Matrix(){
-	n = 0;
-	m = 0;
-}
-
-Matrix::Matrix(int xSize, int ySize){ //заполнить матрицу 0
-	p = new int * [ySize];
-	for (int count = 0; count < ySize; count++)
-		p[count] = new int[xSize];
-	n = xSize;
-	m = ySize;
-}
-
-void Matrix::fill(){
-	ifstream file("file.txt");
-	for (int i = 0; i < n; i++){
-		for (int j = 0; j < m; j++){
-			file >> p[i][j];
-		}
-	}
-}
-
-void Matrix::printMatrix() {
-
-	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < m; j++) {
-			cout << p[i][j] << " ";
-		}
-		cout << "\n";
-	}
-	cout << flush;
-}
-
-Matrix::Matrix(Matrix&MatrixCopy){
-	n = MatrixCopy.n;
-	m = MatrixCopy.m;
-	p = new int*[n];
-	for (int i = 0; i < n; i++) {
-		p[i] = new int[m];
-		for (int j = 0; j < m; j++) {
-			p[i][j] = MatrixCopy.p[i][j];
-		}
-	}
-}
-
-Matrix Matrix::operator+(Matrix MatrixCopy)const {
-
-	Matrix re(n, m);
-	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < m; j++) {
-			re.p[i][j] = p[i][j] + MatrixCopy.p[i][j];
-		}
-	}
-	return re;
-}
-
-Matrix Matrix::operator*(Matrix MatrixCopy)const {
-	Matrix re(n, m);
-	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < m; j++) {
-			re.p[i][j] = 0;
-			for (int k = 0; k < m; k++) 
-				re.p[i][j] += p[i][k] * MatrixCopy.p[k][j];
-		}
-	}
-	return re;
-}
-
-Matrix::~Matrix(){
-	for (int i = 0; i < n; i++){
-		delete[] p[i];
-	}
-	delete[] p; 
+int main(){
+	setlocale(LC_ALL, "rus");
+	string filename;
+	int ySize, xSize;
+	int sum, comp;
+	cout << "Кол-во столбцов: ";
+	cin >> ySize;
+	cout << "Кол-во сток: ";
+	cin >> xSize;
+	Matrix Matrix_1(xSize, ySize);
+	cout << "Введите имя файла для 1й матрицы: ";
+	cin >> filename;
+	Matrix_1.fill(filename);
+	Matrix_1.printMatrix();
+	Matrix Matrix_2(xSize, ySize);
+	cout << "Введите имя файла для 2й матрицы: ";
+	cin >> filename;
+	Matrix_2.fill(filename);
+	Matrix_2.printMatrix();
+	Matrix Sum = Matrix_1 + Matrix_2;
+	Sum.printMatrix();
+	Matrix Comp = Matrix_1*Matrix_2;
+	Comp.printMatrix();
+	system("pause");
 }
