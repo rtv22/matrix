@@ -1,3 +1,6 @@
+#ifndef CLASSMATRIX_H
+#define CLASSMATRIX_H
+
 #include <iostream>
 #include <iomanip>
 #include <fstream>
@@ -102,3 +105,4 @@ Matrix::~Matrix(){
 	delete[] p; 
 }
 
+#endif
