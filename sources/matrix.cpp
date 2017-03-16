@@ -18,6 +18,18 @@ Matrix::Matrix(int xSize, int ySize){ //заполнить матрицу 0
 	}
 }
 
+Matrix::Matrix(Matrix&MatrixCopy){
+	n = MatrixCopy.n;
+	m = MatrixCopy.m;
+	p = new int*[n];
+	for (int i = 0; i < n; i++) {
+		p[i] = new int[m];
+		for (int j = 0; j < m; j++) {
+			p[i][j] = MatrixCopy.p[i][j];
+		}
+	}
+}
+
 void Matrix::fill(string filename){
 	ifstream file;
 	file.open(filename);
@@ -38,18 +50,6 @@ void Matrix::printMatrix() {
 	}
 	cout << "\n";
 	cout << flush;
-}
-
-Matrix::Matrix(Matrix&MatrixCopy){
-	n = MatrixCopy.n;
-	m = MatrixCopy.m;
-	p = new int*[n];
-	for (int i = 0; i < n; i++) {
-		p[i] = new int[m];
-		for (int j = 0; j < m; j++) {
-			p[i][j] = MatrixCopy.p[i][j];
-		}
-	}
 }
 
 Matrix Matrix::operator+(Matrix MatrixCopy)const {
