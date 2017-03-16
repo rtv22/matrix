@@ -20,3 +20,14 @@ SCENARIO("matrixCopy", "[MatrixCopy]") {
 	REQUIRE(matrix.rows() == a);
 	REQUIRE(matrix.columns() == b);
 }
+
+SCENARIO("add", "[operator +]")
+{
+	int init = 4;
+	Matrix Matr_1(init, init);
+	Matrix Matr_2(Matr_1), rez(Matr_1);
+	std::ifstream("Matr_1.txt") >> Matr_1;
+	std::ifstream("Matr_2.txt") >> Matr_2;
+	std::ifstream("rez.txt") >> rez;
+	REQUIRE(Matr_1 + Matr_2 == rez);
+}
