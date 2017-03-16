@@ -3,8 +3,8 @@
 
 SCENARIO("matrix init", "[init]") {
 	matrix_t matrix;
-	REQUIRE(Matrix_1.xSize() == 0);
-	REQUIRE(Matrix_1.ySize() == 0);
+	REQUIRE(matrix.rows() == 0);
+	REQUIRE(matrix.columns() == 0);
 }
 
 SCENARIO("with params", "[init]")
