@@ -7,7 +7,7 @@ SCENARIO("matrix init", "[init]") {
 	REQUIRE(matrix.columns() == 0);
 }
 
-SCENARIO("params init", "[params init]") {
+SCENARIO("params init", "[init]") {
 	int init = 5;
 	Matrix matrix(init, init);
 	REQUIRE(matrix.rows() == 5);
