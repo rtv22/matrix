@@ -7,12 +7,12 @@ Matrix::Matrix(){
 
 int Matrix::rows()
 {
-	return str;
+	return n;
 }
 
 int Matrix::columns()
 {
-	return col;
+	return m;
 }
 
 Matrix::Matrix(int xSize, int ySize){ //заполнить матрицу 0
