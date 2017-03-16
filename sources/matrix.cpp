@@ -1,4 +1,4 @@
-#include "classmatrix.hpp"
+#include "matrix.hpp"
 
 Matrix::Matrix(){
 	n = 0;
