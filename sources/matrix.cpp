@@ -74,6 +74,38 @@ Matrix Matrix::operator*(Matrix MatrixCopy)const {
 	return re;
 }
 
+Matrix Matrix::operator=(Matrix &MatrixCopy) //перегрузка оператора присваивания
+{
+	for (int i = 0; i < n; i++){
+		delete[] p[i];
+	}
+	delete[] p;
+	n = MatrixCopy.n;
+	m = MatrixCopy.m;
+	p = new int*[n];
+	for (int i = 0; i < n; i++)
+	{
+		p[i] = new int[MatrixCopy.m];
+	}
+	p[n][m] = MatrixCopy.p[n][m];
+	return *this;
+}
+
+Matrix Matrix::operator == (Matrix &MatrixCopy)const{
+	Matrix re(n, m);
+	for (int i = 0; i < n; i++){
+		for (int j = 0; j < m; j++){
+			if (p[i][j] != MatrixCopy.p[i][j]){
+				cout << "Matrix_1 != Matrix_2";
+			}
+			break;
+		}
+		break;
+	}
+	cout << "Matrix_1 == Matrix_2" << "\n";
+	return re;
+}
+
 Matrix::~Matrix(){
 	for (int i = 0; i < n; i++){
 		delete[] p[i];
