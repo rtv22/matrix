@@ -13,10 +13,3 @@ SCENARIO("params init", "[params init]") {
 	REQUIRE(matrix.rows() == 5);
 	REQUIRE(matrix.columns() == 5);
 }
-
-SCENARIO("matrixCopy", "[MatrixCopy]") {
-	int a = 2, b = 2;
-	Matrix matrix(a, b);
-	REQUIRE(matrix.rows() == a);
-	REQUIRE(matrix.columns() == b);
-}
