@@ -1,8 +1,8 @@
-#include <classmatrix.hpp>
+#include <matrix.hpp>
 #include <catch.hpp>
 
 SCENARIO("matrix init", "[init]") {
-	Matrix matrix;
-	REQUIRE(matrix.n() == 0);
-	REQUIRE(matrix.m() == 0);
+	Matrix m;
+	REQUIRE(m.rows() == 0);
+	REQUIRE(m.columns() == 0);
 }
