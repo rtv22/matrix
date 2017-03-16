@@ -5,6 +5,16 @@ Matrix::Matrix(){
 	m = 0;
 }
 
+int Matrix::rows()
+{
+	return str;
+}
+
+int Matrix::columns()
+{
+	return col;
+}
+
 Matrix::Matrix(int xSize, int ySize){ //заполнить матрицу 0
 	p = new int *[ySize];
 	for (int count = 0; count < ySize; count++)
