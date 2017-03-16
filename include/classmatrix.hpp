@@ -19,4 +19,6 @@ public:
 	Matrix operator+(Matrix)const;// (6)
 	Matrix operator*(Matrix)const;// (7)
 	Matrix(Matrix &MatrixCopy);
+	Matrix operator==(Matrix&)const;
+	Matrix operator=(Matrix &MatrixCopy);
 };
