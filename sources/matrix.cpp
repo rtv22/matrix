@@ -18,9 +18,9 @@ int Matrix::columns()
 }
 
 Matrix::Matrix(int xSize, int ySize){ //заполнить матрицу 0
-	p = new int *[ySize];
-	for (int count = 0; count < ySize; count++)
-		p[count] = new int[xSize];
+	p = new int *[xSize];
+	for (int count = 0; count < xSize; count++)
+		p[count] = new int[ySize];
 	n = xSize;
 	m = ySize;
 	for (int i = 0; i < n; i++){
