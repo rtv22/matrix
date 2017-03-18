@@ -26,11 +26,22 @@ SCENARIO("copy", "[Copy]")
 	REQUIRE(copy.columns() == 2);
 }
 
-SCENARIO("ADD", "[operator+]")
+SCENARIO("ADD", "[oper+]")
 {
 	Matrix a, b, rez;
 	std::ifstream ("Matr_1.txt") >> a;
 	std::ifstream ("Matr_2.txt") >> b;
 	std::ifstream("rez.txt") >> rez;
 	REQUIRE(a+b == rez);
+}
+
+SCENARIO("mult", "[oper*]")
+{
+	int init = 5;
+	Matrix a(init, init);
+	Matrix b(a), rez(a);
+	std::ifstream("Matr_1.txt") >> a;
+	std::ifstream("Matr_2.txt") >> b;
+	std::ifstream("rez_1.txt") >> rez;
+	REQUIRE(a * b == rez);
 }
