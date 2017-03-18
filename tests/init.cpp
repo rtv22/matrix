@@ -25,8 +25,8 @@ SCENARIO("copy", "[Copy]")
 
 SCENARIO("ADD", "[operator+]")
 {
-	std::ifstream ("Matr_1.txt") >> 1;
-	std::ifstream ("Matr_2.txt") >> 2;
+	std::ifstream ("Matr_1.txt") >> a;
+	std::ifstream ("Matr_2.txt") >> b;
 	std::ifstream("rez.txt") >> rez;
-	REQUIRE(rez==(1+2));
+	REQUIRE(rez==(a+b));
 }
