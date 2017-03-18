@@ -28,12 +28,9 @@ SCENARIO("copy", "[Copy]")
 
 SCENARIO("ADD", "[operator+]")
 {
-	int init = 2;
-	Matrix a(init, init);
-	Matrix b(a);
-	Matrix rez(a);
+	Matrix a, b, rez;
 	std::ifstream ("Matr_1.txt") >> a;
 	std::ifstream ("Matr_2.txt") >> b;
 	std::ifstream("rez.txt") >> rez;
-	REQUIRE(rez ==(a+b));
+	REQUIRE(a+b == rez);
 }
