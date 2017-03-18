@@ -1,11 +1,9 @@
 #include "matrix.hpp"
 
-Matrix::Matrix()
+Matrix::Matrix() : n(0), m(0), matrix{nullptr}
 {
-	n=0;
-	m=0;
+	
 }
-
 
 int Matrix::rows()
 {
