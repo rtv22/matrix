@@ -1,5 +1,8 @@
 #include <matrix.hpp>
 #include <catch.hpp>
+#include <iostream>
+
+using namespace std;
 
 SCENARIO("matrix init", "[init]") {
 	Matrix matrix;
@@ -29,8 +32,8 @@ SCENARIO("ADD", "[operator+]")
 	Matrix a(init, init);
 	Matrix b(a);
 	Matrix rez(a);
-	std::ifstream ("Matr_1.txt") >> a;
+	std:ifstream ("Matr_1.txt") >> a;
 	std::ifstream ("Matr_2.txt") >> b;
 	std::ifstream("rez.txt") >> rez;
-	REQUIRE(rez==(a+b));
+	REQUIRE(rez==a+b);
 }
