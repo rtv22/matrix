@@ -36,5 +36,4 @@ SCENARIO("ADD", "[operator+]")
 	std::ifstream ("Matr_2.txt") >> b;
 	std::ifstream("rez.txt") >> rez;
 	REQUIRE(rez ==(a+b));
-	REQUIRE(rez==sum);
 }
