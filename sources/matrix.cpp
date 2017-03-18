@@ -17,16 +17,11 @@ int Matrix::columns()
 	return m;
 }
 
-Matrix::Matrix(int xSize, int ySize){ //заполнить матрицу 0
+Matrix::Matrix(int xSize, int ySize) : n(xSize), m(ySize)
+{
 	p = new int *[xSize];
-	for (int count = 0; count < xSize; count++)
-		p[count] = new int[ySize];
-	n = xSize;
-	m = ySize;
-	for (int i = 0; i < n; i++){
-		for (int j = 0; j < m; j++){
-			p[i][j] = 0;
-		}
+	for (int i = 0; i < xSize; i++){
+		p[i] = new int[ySize];
 	}
 }
 
