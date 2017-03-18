@@ -22,3 +22,11 @@ SCENARIO("copy", "[Copy]")
 	REQUIRE(copy.rows() == 2);
 	REQUIRE(copy.columns() == 2);
 }
+
+SCENARIO("ADD", "[operator+]")
+{
+	std::ifstream ("Matr_1.txt") >> 1;
+	std::ifstream ("Matr_2.txt") >> 2;
+	std::ifstream("rez.txt") >> rez;
+	REQUIRE(rez==(1+2));
+}
