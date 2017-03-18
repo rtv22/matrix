@@ -25,6 +25,10 @@ SCENARIO("copy", "[Copy]")
 
 SCENARIO("ADD", "[operator+]")
 {
+	int init = 2;
+	Matrix a(init, init);
+	Matrix b(init, init);
+	Matrix rez(init, init);
 	std::ifstream ("Matr_1.txt") >> a;
 	std::ifstream ("Matr_2.txt") >> b;
 	std::ifstream("rez.txt") >> rez;
