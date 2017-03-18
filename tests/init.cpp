@@ -13,3 +13,12 @@ SCENARIO("params init", "[params init]") {
 	REQUIRE(matrix.rows() == 5);
 	REQUIRE(matrix.columns() == 5);
 }
+
+SCENARIO("copy", "[Copy]")
+{
+	int init = 2;
+	Matrix temp(init, init);
+	Matrix copy(temp);
+	REQUIRE(copy.rows() == 2);
+	REQUIRE(copy.columns() == 2);
+}
