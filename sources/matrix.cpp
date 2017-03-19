@@ -33,17 +33,6 @@ void Matrix::fill(string filename){
 	}
 }
 
-void Matrix::printMatrix() {
-	for (int i = 0; i < n; i++) {
-	for (int j = 0; j < m; j++) {
-		cout << p[i][j] << " ";
-	}
-	cout << "\n";
-	}
-	cout << "\n";
-	cout << flush;
-}
-
 	Matrix::Matrix(Matrix&MatrixCopy){
 		n = MatrixCopy.n;
 		m = MatrixCopy.m;
@@ -56,7 +45,7 @@ void Matrix::printMatrix() {
 		}
 	}
 
-	Matrix Matrix::operator=(Matrix &MatrixCopy) //перегрузка оператора присваивания
+	Matrix Matrix::operator=(const Matrix &MatrixCopy) //перегрузка оператора присваивания
 	{
 		for (int i = 0; i < n; i++){
 			delete[] p[i];
@@ -96,7 +85,7 @@ Matrix Matrix::operator*(Matrix MatrixCopy)const {
 		return re;
 	}
 
-bool Matrix::operator == (Matrix &MatrixCopy)const{
+bool Matrix::operator == (const Matrix &MatrixCopy)const{
 	Matrix re(n, m);
 	for (int i = 0; i < n; i++){
 		for (int j = 0; j < m; j++){
@@ -110,20 +99,22 @@ bool Matrix::operator == (Matrix &MatrixCopy)const{
 	return true;
 }
 
-istream& operator >> (istream& rez, Matrix& MatrixCopy){
+istream& operator >> (istream& rez,const Matrix& MatrixCopy){
 	for (int i = 0; i < MatrixCopy.n; i++){
 		for (int j = 0; j < MatrixCopy.m; j++){
 			rez >> MatrixCopy.p[i][j];
 		}
 	}
+	return rez;
 }
 
-ostream& operator <<(ostream& rez, Matrix& MatrixCopy){
+ostream& operator <<(ostream& rez,const Matrix& MatrixCopy){
 	for (int i = 0; i < MatrixCopy.n; i++){
 		for (int j = 0; j < MatrixCopy.m; j++){
 			rez << MatrixCopy.p[i][j];
 		}
 	}
+	return rez;
 }
 
 Matrix::~Matrix(){
