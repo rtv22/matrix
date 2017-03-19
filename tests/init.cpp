@@ -38,8 +38,9 @@ SCENARIO("ADD", "[oper+]")
 SCENARIO("mult", "[oper*]")
 {
 	int init = 2;
-	Matrix a(init, init);
-	Matrix b(a), rez(a);
+	Matrix a(2, 2);
+	Matrix b(2, 2);
+	Matrix rez(2, 2);
 	std::ifstream("Matr_1.txt") >> a;
 	std::ifstream("Matr_2.txt") >> b;
 	std::ifstream("rez_1.txt") >> rez;
