@@ -23,16 +23,6 @@ Matrix::Matrix(int xSize, int ySize) : n(xSize), m(ySize)
 	}
 }
 
-void Matrix::fill(string filename){
-	ifstream file;
-	file.open(filename);
-	for (int i = 0; i < n; i++){
-		for (int j = 0; j < m; j++){
-			file >> p[i][j];
-		}
-	}
-}
-
 	Matrix::Matrix(Matrix&MatrixCopy){
 		n = MatrixCopy.n;
 		m = MatrixCopy.m;
