@@ -15,6 +15,17 @@ int Matrix::columns()
 	return m;
 }
 
+void Matrix::printMatrix() {
+	for (int i = 0; i < n; i++) {
+	for (int j = 0; j < m; j++) {
+		cout << p[i][j] << " ";
+	}
+	cout << "\n";
+	}
+	cout << "\n";
+	cout << flush;
+}
+
 Matrix::Matrix(int xSize, int ySize) : n(xSize), m(ySize)
 {
 	p = new int *[xSize];
