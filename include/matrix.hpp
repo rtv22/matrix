@@ -1,10 +1,3 @@
-#include <iostream>
-#include <iomanip>
-#include <fstream>
-#include <string>
-
-using namespace std;
-
 class Matrix
 {
 private:
@@ -12,8 +5,6 @@ private:
 	int n, m;
 public:
 	Matrix(); // (1)
-	int rows();
-	int columns();
 	Matrix(int, int);// (2)
 	~Matrix();// (3)	
 	void fill(string);// (4)
@@ -23,4 +14,6 @@ public:
 	Matrix(Matrix &MatrixCopy);
 	Matrix operator==(Matrix&)const;
 	Matrix operator=(Matrix &MatrixCopy);
+	friend ostream& operator<<(ostream&, Matrix &MatrixCopy);
+	friend istream& operator>>(istream&, Matrix &MatrixCopy);
 };
