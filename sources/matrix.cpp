@@ -96,7 +96,23 @@ Matrix Matrix::operator=(Matrix &MatrixCopy) //перегрузка операт
 	return *this;
 }
 
-Matrix Matrix::operator == (Matrix &MatrixCopy)const{
+istream& operator >> (istream& rez, Matrix& MatrixCopy){
+	for (int i = 0; i < MatrixCopy.n; i++){
+		for (int j = 0; j < MatrixCopy.m; j++){
+			rez >> MatrixCopy.p[i][j];
+		}
+	}
+}
+
+ostream& operator <<(ostream& rez, Matrix& MatrixCopy){
+	for (int i = 0; i < MatrixCopy.n; i++){
+		for (int j = 0; j < MatrixCopy.m; j++){
+			rez << MatrixCopy.p[i][j];
+		}
+	}
+}
+
+bool Matrix::operator == (Matrix &MatrixCopy)const{
 	Matrix re(n, m);
 	for (int i = 0; i < n; i++){
 		for (int j = 0; j < m; j++){
