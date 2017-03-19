@@ -96,19 +96,18 @@ Matrix Matrix::operator*(Matrix MatrixCopy)const {
 		return re;
 	}
 
-Matrix Matrix::operator == (Matrix &MatrixCopy)const{
+bool Matrix::operator == (Matrix &MatrixCopy)const{
 	Matrix re(n, m);
 	for (int i = 0; i < n; i++){
 		for (int j = 0; j < m; j++){
 			if (p[i][j] != MatrixCopy.p[i][j]){
-				cout << "Matrix_1 != Matrix_2";
+				return false;
 			}
 			break;
 		}
 		break;
 	}
-	cout << "Matrix_1 == Matrix_2" << "\n";
-	return re;
+	return true;
 }
 
 istream& operator >> (istream& rez, Matrix& MatrixCopy){
