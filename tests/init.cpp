@@ -26,14 +26,10 @@ SCENARIO("copy", "[Copy]")
 	REQUIRE(copy.columns() == 2);
 }
 
-SCENARIO("ADD", "[oper+]")
+SCENARIO("comp", "[oper==]")
 {
-	Matrix a(2, 2);
-	Matrix b(2, 2);
-	Matrix c(2, 2);
-	std::ifstream("Matr_1.txt") >> a;
-	std::ifstream("Matr_2.txt") >> b;
-	std::ifstream("rez.txt") >> c;
-	REQUIRE(c == a+b);
-	
+	Matrix a, b;
+	std::ifstream ("Matr_1.txt") >> a;
+	std::ifstream ("Matr_1.txt") >> b;
+	REQUIRE(a == b);
 }
