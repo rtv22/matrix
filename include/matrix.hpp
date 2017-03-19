@@ -12,10 +12,10 @@ public:
 	Matrix operator+(const Matrix)const;// (6)
 	Matrix operator*(const Matrix)const;// (7)
 	Matrix(Matrix &MatrixCopy);
-	auto rows() -> unsigned int;
-    	auto columns() -> unsigned int;
+	auto rows() ->int;
+    	auto columns() ->int;
 	bool operator==(const Matrix&)const;
 	Matrix operator=(const Matrix &MatrixCopy);
-	friend ostream& operator<<(ostream& rez,const Matrix &MatrixCopy);
-	friend istream& operator>>(istream& rez,const Matrix &MatrixCopy);
+	friend ostream& operator<<(ostream&,const Matrix&);
+	friend istream& operator>>(istream&,const Matrix&);
 };
