@@ -35,28 +35,6 @@ Matrix::Matrix(Matrix&MatrixCopy){
 	}
 }
 
-void Matrix::fill(string filename){
-	ifstream file;
-	file.open(filename);
-	for (int i = 0; i < n; i++){
-		for (int j = 0; j < m; j++){
-			file >> p[i][j];
-		}
-	}
-}
-
-void Matrix::printMatrix() {
-
-	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < m; j++) {
-			cout << p[i][j] << " ";
-		}
-		cout << "\n";
-	}
-	cout << "\n";
-	cout << flush;
-}
-
 Matrix Matrix::operator+(Matrix MatrixCopy)const {
 	Matrix re(n, m);
 	for (int i = 0; i < n; i++) {
@@ -77,6 +55,28 @@ Matrix Matrix::operator*(Matrix MatrixCopy)const {
 		}
 	}
 	return re;
+}
+
+void Matrix::fill(string filename){
+	ifstream file;
+	file.open(filename);
+	for (int i = 0; i < n; i++){
+		for (int j = 0; j < m; j++){
+			file >> p[i][j];
+		}
+	}
+}
+
+void Matrix::printMatrix() {
+
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < m; j++) {
+			cout << p[i][j] << " ";
+		}
+		cout << "\n";
+	}
+	cout << "\n";
+	cout << flush;
 }
 
 Matrix Matrix::operator=(Matrix &MatrixCopy) //перегрузка оператора присваивания
