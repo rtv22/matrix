@@ -99,7 +99,7 @@ bool Matrix::operator == (const Matrix &MatrixCopy)const{
 	return true;
 }
 
-istream& operator >> (istream& rez,const Matrix& MatrixCopy){
+istream& operator >> (istream& in,const Matrix& MatrixCopy){
 	for (int i = 0; i < MatrixCopy.n; i++){
 		for (int j = 0; j < MatrixCopy.m; j++){
 			rez >> MatrixCopy.p[i][j];
@@ -108,7 +108,7 @@ istream& operator >> (istream& rez,const Matrix& MatrixCopy){
 	return rez;
 }
 
-ostream& operator <<(ostream& rez,const Matrix& MatrixCopy){
+ostream& operator <<(ostream& out,const Matrix& MatrixCopy){
 	for (int i = 0; i < MatrixCopy.n; i++){
 		for (int j = 0; j < MatrixCopy.m; j++){
 			rez << MatrixCopy.p[i][j];
