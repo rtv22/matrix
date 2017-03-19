@@ -32,7 +32,7 @@ SCENARIO("ADD", "[oper+]")
 	std::ifstream ("Matr_1.txt") >> a;
 	std::ifstream ("Matr_2.txt") >> b;
 	std::ifstream("rez.txt") >> rez;
-	REQUIRE(a+b == rez);
+	REQUIRE((a+b) == rez);
 }
 
 SCENARIO("mult", "[oper*]")
@@ -43,5 +43,5 @@ SCENARIO("mult", "[oper*]")
 	std::ifstream("Matr_1.txt") >> a;
 	std::ifstream("Matr_2.txt") >> b;
 	std::ifstream("rez_1.txt") >> rez;
-	REQUIRE(a * b == rez);
+	REQUIRE((a * b) == rez);
 }
