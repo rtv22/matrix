@@ -28,24 +28,18 @@ SCENARIO("copy", "[Copy]")
 
 SCENARIO("ADD", "[oper+]")
 {
-	int init = 2;
-	Matrix sum(init, init)
-	Matrix a, b, rez;
+	Matrix a, b, sum;
 	std::ifstream ("Matr_1.txt") >> a;
 	std::ifstream ("Matr_2.txt") >> b;
-	std::ifstream("rez.txt") >> rez;
-	sum = a+b;
-	REQUIRE(sum == rez);
+	std::ifstream("rez.txt") >> sum;
+	REQUIRE(sum == a+b);
 }
 
 SCENARIO("mult", "[oper*]")
 {
-	int init = 2;
-	Matrix mult(init, init)
-	Matrix a, b, rez;
+	Matrix a, b, mult;
 	std::ifstream("Matr_1.txt") >> a;
 	std::ifstream("Matr_2.txt") >> b;
-	std::ifstream("rez_1.txt") >> rez;
-	mult = a*b;
-	REQUIRE(mult == rez);
+	std::ifstream("rez_1.txt") >> mult;
+	REQUIRE(mult == a*b);
 }
