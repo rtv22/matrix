@@ -7,7 +7,6 @@ public:
 	Matrix(); // (1)
 	Matrix(int, int);// (2)
 	~Matrix();// (3)	
-	void fill();// (4)
 	void printMatrix(); //(5)
 	Matrix operator+(const Matrix)const;// (6)
 	Matrix operator*(const Matrix)const;// (7)
@@ -16,6 +15,6 @@ public:
     	auto columns() ->int;
 	bool operator==(const Matrix&)const;
 	Matrix operator=(const Matrix &MatrixCopy);
-	friend ostream& operator<<(ostream&,const Matrix&);
-	friend istream& operator>>(istream&,const Matrix&);
+	ostream& operator<<(ostream&,const Matrix&);
+	istream& operator>>(istream&,const Matrix&);
 };
