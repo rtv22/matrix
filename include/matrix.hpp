@@ -9,13 +9,13 @@ public:
 	~Matrix();// (3)	
 	void fill();// (4)
 	void printMatrix(); //(5)
-	Matrix operator+(Matrix)const;// (6)
-	Matrix operator*(Matrix)const;// (7)
+	Matrix operator+(const Matrix)const;// (6)
+	Matrix operator*(const Matrix)const;// (7)
 	Matrix(Matrix &MatrixCopy);
 	auto rows() -> unsigned int;
     	auto columns() -> unsigned int;
-	bool operator==(Matrix&)const;
-	Matrix operator=(Matrix &MatrixCopy);
-	friend ostream& operator<<(ostream& rez, Matrix &MatrixCopy);
-	friend istream& operator>>(istream& rez, Matrix &MatrixCopy);
+	bool operator==(const Matrix&)const;
+	Matrix operator=(const Matrix &MatrixCopy);
+	friend ostream& operator<<(ostream& rez,const Matrix &MatrixCopy);
+	friend istream& operator>>(istream& rez,const Matrix &MatrixCopy);
 };
