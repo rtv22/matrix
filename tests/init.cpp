@@ -10,14 +10,14 @@ SCENARIO("matrix init", "[init]") {
 	REQUIRE(matrix.columns() == 0);
 }
 
-SCENARIO("params init", "[params init]") {
+SCENARIO("params init", "[init]") {
 	int init = 5;
 	Matrix matrix(init, init);
 	REQUIRE(matrix.rows() == 5);
 	REQUIRE(matrix.columns() == 5);
 }
 
-SCENARIO("copy", "[Copy]")
+SCENARIO("copy", "[init]")
 {
 	int init = 2;
 	Matrix temp(init, init);
@@ -26,7 +26,7 @@ SCENARIO("copy", "[Copy]")
 	REQUIRE(copy.columns() == 2);
 }
 
-SCENARIO("comp", "[oper==]")
+SCENARIO("comp", "[init]")
 {
 	Matrix a(2, 2);
 	Matrix b(2, 2);
@@ -34,7 +34,7 @@ SCENARIO("comp", "[oper==]")
 	std::ifstream ("Matr_1_1.txt") >> b;
 	REQUIRE(a == b);
 }
-SCENARIO("add", "[oper+]")
+SCENARIO("add", "[init]")
 {
 	Matrix a(2, 2);
 	Matrix b(2, 2);
