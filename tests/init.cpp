@@ -37,16 +37,6 @@ SCENARIO("add", "[oper+]")
 	REQUIRE((A + B) == C);
 }
 
-SCENARIO("comp", "[oper=]")
-{
-	Matrix A(2, 2);
-	Matrix B(2, 2);
-	std::ifstream("Matr_1.txt") >> A;
-	std::ifstream("empty.txt") >> B;
-	B = A;
-	REQUIRE(A == B);
-}
-
 SCENARIO("mult", "[mult]")
 {
 	Matrix A (2, 2);
