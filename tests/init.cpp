@@ -42,8 +42,8 @@ SCENARIO("comp", "[oper=]")
 	Matrix A(2, 2);
 	Matrix B(2, 2);
 	std::ifstream("Matr_1.txt") >> A;
-	A = B;
-	REQUARE(A == B);
+	B = A;
+	REQUIRE(A == B);
 }
 
 SCENARIO("mult", "[mult]")
@@ -54,5 +54,5 @@ SCENARIO("mult", "[mult]")
 	std::ifstream("Matr_1.txt") >> A;
 	std::ifstream("Matr_2.txt") >> B;
 	std::ifstream("rez_1.txt") >> C;
-	REQUARE((A*B) == C);
+	REQUIRE((A*B) == C);
 }
