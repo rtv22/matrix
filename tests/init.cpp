@@ -47,3 +47,10 @@ SCENARIO("mult", "[mult]")
 	std::ifstream("rez_1.txt") >> C;
 	REQUIRE((A*B) == C);
 }
+
+SCENARIO("assign", [oper=])
+{
+	Matrix A(2, 2);
+	Matrix B = A;
+	REQUIRE(B == A);
+}
