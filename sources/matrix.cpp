@@ -19,7 +19,7 @@ Matrix::Matrix(int xSize, int ySize) : n(xSize), m(ySize)
 {
 	p = new int *[xSize];
 	for (int i = 0; i < xSize; i++){
-		p[i] = new int[ySize];
+		p[i] = new int[ySize]();
 	}
 }
 
@@ -92,19 +92,19 @@ bool Matrix::operator == (const Matrix &MatrixCopy)const{
 istream& operator >> (istream& in,const Matrix& MatrixCopy){
 	for (int i = 0; i < MatrixCopy.n; i++){
 		for (int j = 0; j < MatrixCopy.m; j++){
-			rez >> MatrixCopy.p[i][j];
+			in >> MatrixCopy.p[i][j];
 		}
 	}
-	return rez;
+	return in;
 }
 
 ostream& operator <<(ostream& out,const Matrix& MatrixCopy){
 	for (int i = 0; i < MatrixCopy.n; i++){
 		for (int j = 0; j < MatrixCopy.m; j++){
-			rez << MatrixCopy.p[i][j];
+			out << MatrixCopy.p[i][j];
 		}
 	}
-	return rez;
+	return out;
 }
 
 Matrix::~Matrix(){
