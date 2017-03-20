@@ -12,3 +12,5 @@ matrix methods:
 - [ ] print
 - [x] operator +
 - [x] operator *
+- [x] operator =
+- [x] operator ==
