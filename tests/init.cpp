@@ -48,7 +48,7 @@ SCENARIO("mult", "[mult]")
 	REQUIRE((A*B) == C);
 }
 
-SCENARIO("assign", [oper=])
+SCENARIO("assign", "[oper=]")
 {
 	Matrix A(2, 2);
 	Matrix B = A;
