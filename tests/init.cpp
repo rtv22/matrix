@@ -42,6 +42,7 @@ SCENARIO("comp", "[oper=]")
 	Matrix A(2, 2);
 	Matrix B(2, 2);
 	std::ifstream("Matr_1.txt") >> A;
+	std::ifstream("empty.txt") >> B;
 	B = A;
 	REQUIRE(A == B);
 }
