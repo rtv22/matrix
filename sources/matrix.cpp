@@ -1,5 +1,7 @@
 #include "matrix.hpp"
 
+using namespace std;
+
 Matrix::Matrix() : n(0), m(0), p{nullptr}
 {
 	
