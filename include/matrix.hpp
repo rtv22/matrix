@@ -15,6 +15,6 @@ public:
     	auto columns() ->int;
 	bool operator==(const Matrix&)const;
 	Matrix operator=(const Matrix &MatrixCopy);
-	ostream& operator<<(ostream&,const Matrix&);
-	istream& operator>>(istream&,const Matrix&);
+	friend ostream& operator<<(ostream&,const Matrix&);
+	friend istream& operator>>(istream&,const Matrix&);
 };
