@@ -18,8 +18,8 @@ public:
 	Matrix operator+(const Matrix)const;// (6)
 	Matrix operator*(const Matrix)const;// (7)
 	Matrix(Matrix &MatrixCopy);
-	auto rows() ->int;
-    	auto columns() ->int;
+	int rows()const;
+    	int columns()const;
 	bool operator==(const Matrix&)const;
 	Matrix operator=(const Matrix &MatrixCopy);
 	friend ostream& operator<<(ostream&,const Matrix&);
