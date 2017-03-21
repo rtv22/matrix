@@ -17,7 +17,7 @@ public:
 	void printMatrix(); //(5)
 	Matrix operator+(const Matrix)const;// (6)
 	Matrix operator*(const Matrix)const;// (7)
-	Matrix(Matrix &MatrixCopy);
+	Matrix(const Matrix &MatrixCopy);
 	int rows()const;
     	int columns()const;
 	bool operator==(const Matrix&)const;
