@@ -75,6 +75,7 @@ Matrix Matrix::operator*(const Matrix &MatrixCopy)const{
 			}
 		}
 	}
+	return re;
 }
 
 bool Matrix::operator == (const Matrix &MatrixCopy)const{
